@@ -1,0 +1,23 @@
+{
+  "name": "frenemy",
+  "version": "1.0.0",
+  "description": "WP Theme",
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^2.2.2",
+    "autoprefixer": "^9.1.5",
+    "chokidar-cli": "^1.2.1",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.0.1",
+    "postcss-focus-within": "^3.0.0"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "build:style": "node-sass ./assets/app/style.scss ./assets/app/style.css --output-style expanded && postcss -r ./assets/app/style.css",
+    "build:style:production": "node-sass ./assets/app/style.scss ./assets/app/style.css --output-style compressed && postcss -r ./assets/app/style.css",
+    "build": "run-p \"build:*\"",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
+  }
+}
