@@ -62,8 +62,8 @@ $keywords    = trim( strip_tags( $keywords ) );
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="site-warp">
-    <header class="site-header fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="site-header fixed-top" style="top: auto;list-style: none">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e( '顶部菜单' ); ?>">
@@ -83,6 +83,29 @@ $keywords    = trim( strip_tags( $keywords ) );
 					)
 				);
 				?>
+                <li class="nav-item m-0 d-none d-md-block d-lg-block d-xl-block">
+                  <div class="site-searchbar">
+                    <label for="nav-top-search"></label>
+                    <input id="nav-top-search" class="search-input" type="text" placeholder="Search...">
+                    <a class="search-icon"><i class="fas fa-search"></i></a>
+                  </div>
+                </li>
+                <li class="nav-item d-block d-md-none d-lg-none d-xl-none">
+                  <form class="mobile-search">
+                    <div class="input-group">
+                      <input type="text" class="mobile-search-input form-control" placeholder="Search..." aria-label="Search Input">
+                    </div>
+                  </form>
+                </li>
+                <li class="nav-item">
+                  <label class="dark-switch-label" for="darkSwitch">
+                    <a class="dark-switch-label-span" data-toggle="tooltip" data-placement="bottom" title="日夜模式">
+                      <i class="fas fa-sun"></i>
+                    </a>
+                  </label>
+                  <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                </li>
+
             </div>
         </nav>
     </header>

@@ -284,10 +284,12 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		$item_output .= isset( $args->after ) ? $args->after : '';
 
+
 		/**
 		 * END appending the internal item contents to the output.
 		 */
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
 
 	}
 
@@ -313,6 +315,8 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 * @param string $output            Used to append additional content (passed by reference).
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
+
+
 		if ( ! $element ) {
 			return; }
 		$id_field = $this->db_fields['id'];
